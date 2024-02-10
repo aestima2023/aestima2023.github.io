@@ -13,22 +13,28 @@
   --bs-btn-disabled-border-color: #aa503c;
 }
 
+.navbar {
+  --bs-navbar-toggler-border-color: white;
+}
+
 html {
   font-family: "Roboto", sans-serif;
+  min-width: 260px;
+}
+
+body {
+  min-width: 260px;
 }
 
 .header {
+  min-width: 260px;
   position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding-left: 60px;
   padding-right: 24px;
-  height: 112px;
   color: white;
   transition: 1s ease-in-out;
 }
@@ -58,7 +64,6 @@ html {
 
 .header.dark {
   background-color: black;
-  height: 90px;
 }
 
 .header .logo {
@@ -127,12 +132,6 @@ html {
   padding-right: 20px;
 }
 
-.proposals .items {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-}
-
 .proposals .item-name {
   font-size: 20px;
   font-weight: 700;
@@ -173,12 +172,6 @@ html {
   background-color: #eee;
 }
 
-.members {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-}
-
 .member {
   display: flex;
   flex-direction: column;
@@ -214,12 +207,6 @@ html {
 .contact {
   background-color: #aa503c;
   color: #e9e9e9;
-}
-
-.contact-items {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
 }
 
 .contact-item {
@@ -288,8 +275,55 @@ footer .email:hover:after {
   border-color: black;
 }
 
+.navbar-toggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 38px;
+  width: 54px;
+  box-shadow: none !important;
+}
+
+.navbar-toggler-line {
+  height: 1px;
+  display: block;
+  background: white;
+  border-radius: 50%;
+  width: 100%;
+}
+
+.header .navbar.navbar-expand-lg {
+  transition: 1s;
+}
+
+.header .navbar.navbar-expand-lg.show {
+  background: #000;
+  padding-bottom: 1rem;
+}
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1200px;
+  }
+}
+
+@media (max-width: 991px) {
+  .menu {
+    padding-left: 0;
+  }
+
+  .menu-item:hover:after {
+    display: none;
+  }
+
+  .header {
+    padding-left: 0;
+    padding-right: 0;
+
+    height: auto;
+  }
+
+  .header.dark {
+    height: auto;
   }
 }
